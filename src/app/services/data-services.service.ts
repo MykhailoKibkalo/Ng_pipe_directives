@@ -11,15 +11,15 @@ export class DataServicesService {
   constructor() {
   }
 
-  getCurrentState(): number {
-    return this.data.getValue();
+  getCurrentState(): BehaviorSubject<number>{
+    return this.data;
   }
 
   incCurrentValue(): void {
-     this.data.next(this.getCurrentState() + 1);
+     this.data.next(this.data.getValue() + 1);
   }
 
   decCurrentState(): void {
-    this.data.next(this.getCurrentState() - 1);
+    this.data.next(this.data.getValue() - 1);
   }
 }

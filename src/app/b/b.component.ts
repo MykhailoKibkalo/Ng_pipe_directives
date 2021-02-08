@@ -14,6 +14,6 @@ export class BComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.someValue = this.dataServices.getCurrentState();
+    this.dataServices.getCurrentState().subscribe(value => this.someValue = value);
   }
 }
