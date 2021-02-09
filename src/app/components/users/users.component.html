@@ -1,0 +1,9 @@
+<div [class]="['flex']">
+
+  <div>
+    <app-user *ngFor="let user of users" [user]="user" (chosenUser)="chosenUser($event)"></app-user>
+  </div>
+  <div>
+    <app-full-user *ngIf="singleUser" [singleUser]="singleUser"></app-full-user>
+  </div>
+</div>
